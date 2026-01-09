@@ -40,6 +40,15 @@ PSI_THRESHOLD = 0.25
 KS_PVALUE_THRESHOLD = 0.05
 CHI2_PVALUE_THRESHOLD = 0.05
 
+# Additional, tunable thresholds (warning/action/critical)
+THRESHOLDS = {
+    "psi": {"warning": 0.1, "action": 0.25, "critical": 0.5},
+    "ks_pvalue": {"warning": 0.1, "action": 0.05, "critical": 0.01},
+    "chi2_pvalue": {"warning": 0.1, "action": 0.05, "critical": 0.01},
+    "wasserstein": {"warning": 0.05, "action": 0.1, "critical": 0.25},
+    "kl": {"warning": 0.05, "action": 0.1, "critical": 0.25}
+}
+
 # =======================
 # STREAMLIT SETTINGS
 # =======================

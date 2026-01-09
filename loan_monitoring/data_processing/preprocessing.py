@@ -78,7 +78,5 @@ def build_preprocessing_pipeline(
         ]
     )
 
-    # feature_names output retention
-    feature_names = num_feats + list(preprocessor.named_transformers_["cat"]["encoder"].get_feature_names_out(cat_feats))
-
-    return preprocessor, feature_names
+    # Only return the pipeline and the feature lists (feature names after fitting, if needed, should be extracted after fit)
+    return preprocessor, num_feats + cat_feats

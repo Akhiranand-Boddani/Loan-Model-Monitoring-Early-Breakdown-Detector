@@ -22,8 +22,14 @@ openai>=0.27.0
 # Optional utils
 joblib>=1.1.0
 
+# LangChain + Ollama (preferred lightweight local LLM path)
+langchain>=0.0.200
+ollama>=0.0.10  # optional Python client; code falls back to CLI if missing
+
+# Optional heavy local models (only enable if you have enough RAM/GPU)
 transformers>=4.40.0
 torch>=2.1.0
 accelerate>=0.23.0
 
+# Optional low-level optimizers (only if needed for local HF models)
 bitsandbytes>=0.39.0

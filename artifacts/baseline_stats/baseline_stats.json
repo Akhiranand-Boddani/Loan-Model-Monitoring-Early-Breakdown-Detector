@@ -1,0 +1,243 @@
+{
+    "numeric": {
+        "Age": {
+            "count": 255347,
+            "mean": 43.498306226429136,
+            "median": 43.0,
+            "std": 14.990258418709587,
+            "min": 18.0,
+            "max": 69.0,
+            "q1": 31.0,
+            "q3": 56.0,
+            "skew": 0.000697850269592325,
+            "kurtosis": -1.198430663475739
+        },
+        "Income": {
+            "count": 255347,
+            "mean": 82499.30459727351,
+            "median": 82466.0,
+            "std": 38963.013729378144,
+            "min": 15000.0,
+            "max": 149999.0,
+            "q1": 48825.5,
+            "q3": 116219.0,
+            "skew": -0.00038051104936479723,
+            "kurtosis": -1.198360959063462
+        },
+        "LoanAmount": {
+            "count": 255347,
+            "mean": 127578.86551242035,
+            "median": 127556.0,
+            "std": 70840.70614150059,
+            "min": 5000.0,
+            "max": 249999.0,
+            "q1": 66156.0,
+            "q3": 188985.0,
+            "skew": -0.0018272361131660064,
+            "kurtosis": -1.2036798092420482
+        },
+        "CreditScore": {
+            "count": 255347,
+            "mean": 574.2643461642392,
+            "median": 574.0,
+            "std": 158.9038665949753,
+            "min": 300.0,
+            "max": 849.0,
+            "q1": 437.0,
+            "q3": 712.0,
+            "skew": 0.004688158798358314,
+            "kurtosis": -1.2003018086290493
+        },
+        "MonthsEmployed": {
+            "count": 255347,
+            "mean": 59.541976212761455,
+            "median": 60.0,
+            "std": 34.64337563735206,
+            "min": 0.0,
+            "max": 119.0,
+            "q1": 30.0,
+            "q3": 90.0,
+            "skew": -0.0021416710361592834,
+            "kurtosis": -1.1996325013964042
+        },
+        "NumCreditLines": {
+            "count": 255347,
+            "mean": 2.501035845339871,
+            "median": 2.0,
+            "std": 1.1170176714339635,
+            "min": 1.0,
+            "max": 4.0,
+            "q1": 2.0,
+            "q3": 3.0,
+            "skew": -0.00027802312564204946,
+            "kurtosis": -1.3576683089005306
+        },
+        "InterestRate": {
+            "count": 255347,
+            "mean": 13.492773480792803,
+            "median": 13.46,
+            "std": 6.636443064944322,
+            "min": 2.0,
+            "max": 25.0,
+            "q1": 7.77,
+            "q3": 19.25,
+            "skew": 0.004607863854858844,
+            "kurtosis": -1.1971672792799237
+        },
+        "LoanTerm": {
+            "count": 255347,
+            "mean": 36.02589417537703,
+            "median": 36.0,
+            "std": 16.969330034462832,
+            "min": 12.0,
+            "max": 60.0,
+            "q1": 24.0,
+            "q3": 48.0,
+            "skew": -0.0021777833737943878,
+            "kurtosis": -1.2998934917855154
+        },
+        "DTIRatio": {
+            "count": 255347,
+            "mean": 0.5002120643673119,
+            "median": 0.5,
+            "std": 0.23091661543575948,
+            "min": 0.1,
+            "max": 0.9,
+            "q1": 0.3,
+            "q3": 0.7,
+            "skew": -0.001498954564788922,
+            "kurtosis": -1.1996748247090336
+        }
+    },
+    "categorical": {
+        "Education": {
+            "unique_values": [
+                "Bachelor's",
+                "High School",
+                "Master's",
+                "PhD"
+            ],
+            "counts": {
+                "Bachelor's": 64366,
+                "High School": 63903,
+                "Master's": 63541,
+                "PhD": 63537
+            },
+            "proportions": {
+                "Bachelor's": 0.25207266973960923,
+                "High School": 0.2502594508649015,
+                "Master's": 0.24884177217668507,
+                "PhD": 0.24882610721880422
+            },
+            "entropy": 1.9999795853384734
+        },
+        "EmploymentType": {
+            "unique_values": [
+                "Part-time",
+                "Unemployed",
+                "Self-employed",
+                "Full-time"
+            ],
+            "counts": {
+                "Part-time": 64161,
+                "Unemployed": 63824,
+                "Self-employed": 63706,
+                "Full-time": 63656
+            },
+            "proportions": {
+                "Part-time": 0.25126984064821595,
+                "Unemployed": 0.2499500679467548,
+                "Self-employed": 0.2494879516892699,
+                "Full-time": 0.24929213971575934
+            },
+            "entropy": 1.9999931438000262
+        },
+        "MaritalStatus": {
+            "unique_values": [
+                "Married",
+                "Divorced",
+                "Single"
+            ],
+            "counts": {
+                "Married": 85302,
+                "Divorced": 85033,
+                "Single": 85012
+            },
+            "proportions": {
+                "Married": 0.3340630592879493,
+                "Divorced": 0.33300959087046256,
+                "Single": 0.3329273498415881
+            },
+            "entropy": 1.584960765495539
+        },
+        "HasMortgage": {
+            "unique_values": [
+                "Yes",
+                "No"
+            ],
+            "counts": {
+                "Yes": 127677,
+                "No": 127670
+            },
+            "proportions": {
+                "Yes": 0.5000137068381457,
+                "No": 0.4999862931618543
+            },
+            "entropy": 0.9999999994579005
+        },
+        "HasDependents": {
+            "unique_values": [
+                "Yes",
+                "No"
+            ],
+            "counts": {
+                "Yes": 127742,
+                "No": 127605
+            },
+            "proportions": {
+                "Yes": 0.5002682624037095,
+                "No": 0.4997317375962905
+            },
+            "entropy": 0.9999997923537087
+        },
+        "LoanPurpose": {
+            "unique_values": [
+                "Business",
+                "Home",
+                "Education",
+                "Other",
+                "Auto"
+            ],
+            "counts": {
+                "Business": 51298,
+                "Home": 51286,
+                "Education": 51005,
+                "Other": 50914,
+                "Auto": 50844
+            },
+            "proportions": {
+                "Business": 0.20089525234289027,
+                "Home": 0.20084825746924773,
+                "Education": 0.19974779417811842,
+                "Other": 0.19939141638632918,
+                "Auto": 0.1991172796234144
+            },
+            "entropy": 2.3219182357326282
+        },
+        "HasCoSigner": {
+            "unique_values": [
+                "Yes",
+                "No"
+            ],
+            "counts": {
+                "Yes": 127701,
+                "No": 127646
+            },
+            "proportions": {
+                "Yes": 0.5001076965854309,
+                "No": 0.4998923034145692
+            },
+            "entropy": 0.9999999665336455
+        }
+    }
+}

@@ -70,16 +70,24 @@ def plot_categorical_bars(
 def plot_correlation_heatmap(
     df: pd.DataFrame,
     numeric_features: List[str],
-    figsize: tuple = (10, 8)
+    figsize: tuple = (12, 10)
 ):
     """
-    Plot correlation matrix heatmap.
+    Plot correlation matrix heatmap for numeric features only.
+    Filters to only include numeric columns to avoid errors.
     """
-    corr = df[numeric_features].corr()
+    # Ensure we only have numeric features
+    numeric_cols = df[numeric_features].select_dtypes(include=[np.number]).columns.tolist()
+    
+    if len(numeric_cols) < 2:
+        return None  # Not enough numeric features for correlation
+    
+    corr = df[numeric_cols].corr()
 
     fig, ax = plt.subplots(figsize=figsize)
-    sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax)
-    ax.set_title("Numeric Feature Correlation Heatmap")
+    sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", ax=ax, cbar_kws={"label": "Correlation"})
+    ax.set_title("Numeric Feature Correlation Heatmap", fontsize=14, fontweight='bold')
+    plt.tight_layout()
 
     return fig
 

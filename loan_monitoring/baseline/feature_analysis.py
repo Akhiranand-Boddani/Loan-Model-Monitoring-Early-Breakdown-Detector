@@ -50,15 +50,17 @@ def compute_mutual_information(
     # numeric features
     for feat in numeric_features:
         # bin numeric into categories for MI
-        bin_vals = pd.qcut(df[feat], q=10, duplicates="drop").codes
-        mi = mutual_info_score(bin_vals, y)
+        bin_vals = pd.qcut(df[feat], q=10, duplicates="drop").cat.codes
+        import numpy as np
+        mi = mutual_info_score(np.asarray(bin_vals), np.asarray(y))
         mi_scores[feat] = float(mi)
 
     # categorical features
     for feat in categorical_features:
         le = LabelEncoder()
         col_enc = le.fit_transform(df[feat].astype(str))
-        mi = mutual_info_score(col_enc, y)
+        import numpy as np
+        mi = mutual_info_score(np.asarray(col_enc), np.asarray(y))
         mi_scores[feat] = float(mi)
 
     return mi_scores

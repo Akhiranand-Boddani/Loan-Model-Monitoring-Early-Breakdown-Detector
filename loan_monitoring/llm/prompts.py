@@ -1,20 +1,27 @@
-FEATURE_DRIFT_PROMPT = """
-Feature Drift Analysis Summary
+FEATURE_DRIFT_PROMPT = '''
+You are an expert ML monitoring analyst. Analyze the following drift diagnostics and produce a structured JSON response.
 
-Top Numeric Drifted Features:
-{numeric_table}
+Input:
+{{
 
-Top Categorical Drifted Features:
-{categorical_table}
+	"numeric_table": """{numeric_table}""",
+	"categorical_table": """{categorical_table}""",
+	"prediction_summary": """{prediction_summary}""",
+	"performance_summary": """{performance_summary}"""
+}}
+Requirements:
+- Provide a short Chain-of-Thought as a list of 3-6 brief steps (strings) explaining how you interpret the signals.
+- Provide a single-sentence `conclusion` summarizing model health.
+- Provide `recommendations` as a JSON array (max 4 items) with short actionable steps.
 
-Prediction Output Summary:
-{prediction_summary}
+Output JSON schema (exact keys required):
+{{
+	"chain_of_thought": ["step 1", "step 2", ...],
+	"conclusion": "...",
+	"recommendations": ["action 1", "action 2"]
+}}
 
-Performance Changes (if available):
-{performance_summary}
+Respond ONLY with valid JSON following the schema above. Do not include any extra text.
+'''
 
-Interpret these results and explain what they indicate
-about the quality and reliability of the model on the new data.
-"""
-
-EXPLAINATION_PREFIX = "Provide a clear explanation of the drift analysis results."
+EXPLAINATION_PREFIX = "Return JSON with keys: chain_of_thought, conclusion, recommendations."

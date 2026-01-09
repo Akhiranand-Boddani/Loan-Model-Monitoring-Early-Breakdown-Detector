@@ -17,7 +17,7 @@ This project is a complete, production-grade solution for monitoring machine lea
 
 ## Directory Structure
 
-```
+```text
 loan_drift_monitoring/
 ├── create_drift_data.py         # Utility for generating synthetic drifted datasets
 ├── Dockerfile                   # Containerization setup
@@ -95,12 +95,24 @@ loan_drift_monitoring/
 
 ## Local LLM Setup
 
-- The system uses Hugging Face Transformers for local LLM explanations. Ensure you have enough resources to run the selected model (e.g., GPT-J).
-- If `transformers` is not installed, install it:
-  
+This project supports multiple local LLM options. Preferred (lightweight) path: run a local Ollama server and use the Gemma family (gemma:2b) via LangChain or the Ollama client. This avoids loading multi‑GB Hugging Face models in-process.
+
+Recommended options:
+- Ollama + Gemma (preferred, lightweight): install Ollama (https://ollama.com/) and pull `gemma:2b`:
+
    ```bash
-   pip install transformers
+   # follow Ollama install instructions for your OS
+   ollama pull gemma:2b
    ```
+
+- LangChain integration: install `langchain` and the optional `ollama` Python client for convenience (the code will fall back to the CLI if the client is not installed).
+
+Env vars (optional):
+- `OLLAMA_MODEL`: override the default Ollama model (default: `gemma:2b`).
+- `OLLAMA_TEMPERATURE`: control generation randomness (default `0.0` for deterministic output).
+- `FORCE_LOCAL_LLM=1`: force use of Hugging Face `transformers` local model (only if you have the resources).
+
+If you do not run Ollama, the explainer will fall back to a deterministic rule-based explanation. Only enable Hugging Face `transformers` if you have sufficient RAM and a supported GPU or CPU resources.
 
 ## Extending & Customizing
 
